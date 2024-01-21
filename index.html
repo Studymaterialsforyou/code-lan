@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Language Converter</title>
+</head>
+<body>
+
+    <h1>Code Language Converter</h1>
+
+    <label for="inputSentence">Enter a sentence:</label>
+    <input type="text" id="inputSentence" placeholder="Type your sentence...">
+    <button onclick="encode()">Encode</button>
+
+    <p id="outputResult"></p>
+
+    <script>
+        function encode() {
+            var sentence = document.getElementById("inputSentence").value.toUpperCase();
+            var codeLanguage = {
+                'A': 'f', 'B': 'g', 'C': 'h', 'D': 'i', 'E': 'j', 'F': 'k',
+                'G': 'l', 'H': 'm', 'I': 'n', 'J': 'o', 'K': 'p', 'L': 'q',
+                'M': 'r', 'N': 's', 'O': 't', 'P': 'u', 'Q': 'v', 'R': 'w',
+                'S': 'x', 'T': 'y', 'U': 'z', 'V': 'a', 'W': 'b', 'X': 'c',
+                'Y': 'd', 'Z': 'e'
+            };
+            var encodedResult = Array.from(sentence).map(char => codeLanguage[char] || char).join('');
+            document.getElementById("outputResult").innerText = "Encoded Result: " + encodedResult;
+        }
+    </script>
+
+</body>
+</html>
